@@ -1,0 +1,6 @@
+html { scroll-behavior: smooth; }
+
+.bg-pattern {
+  background-image: radial-gradient(circle at 2px 2px, #047857 1px, transparent 0);
+  background-size: 32px 32px;
+}
