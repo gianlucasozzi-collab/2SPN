@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPN – Scuola Pratica di Nutrizione | Seconda edizione – Torino, autunno 2026</title>
+  <meta name="description" content="Percorso pratico-intensivo per biologi nutrizionisti: ISAK Livello 1, competenze cliniche, comunicazione, marketing sanitario. 70% pratica, massimo 30 posti. Torino, ottobre–novembre 2026." />
+
+  <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml" />
+
+  <!-- Tailwind CSS (OK in dev; warning in console è normale) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script>window.SPN_EB_ENABLED = true; // versione con Early Bird attivo (fino all'1 settembre)</script>
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-800 selection:bg-emerald-200 selection:text-emerald-900">
+
+  <!-- HEADER NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer group" data-scroll-top>
+        <div class="bg-emerald-700 text-white p-2 rounded-lg group-hover:bg-emerald-600 transition-colors">
+          <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h1 class="font-bold text-xl leading-none text-emerald-900 tracking-tight">SPN</h1>
+          <p class="text-[10px] uppercase font-bold text-emerald-600 tracking-wider">Scuola Pratica Nutrizione</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+        <a href="#progetto" class="hover:text-emerald-700 transition-colors">Il Problema</a>
+        <a href="#metodologia" class="hover:text-emerald-700 transition-colors">Metodo</a>
+        <a href="#programma" class="hover:text-emerald-700 transition-colors">Programma</a>
+        <a href="#prima-edizione" class="hover:text-emerald-700 transition-colors">Prima Edizione</a>
+        <a href="#sede" class="hover:text-emerald-700 transition-colors">Sede</a>
+        <a href="#docenti" class="hover:text-emerald-700 transition-colors">Docenti</a>
+        <a href="#iscrizione" class="text-emerald-700 bg-emerald-50 px-4 py-2 rounded-full hover:bg-emerald-100 transition-colors">Iscrizioni</a>
+      </nav>
+
+      <button class="md:hidden p-2 text-slate-600" id="mobile-menu-toggle" aria-label="Apri menu">
+        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-4 space-y-4 shadow-xl absolute w-full left-0 z-50">
+      <a href="#progetto" class="mobile-link block w-full text-left font-medium text-slate-600 py-2 border-b border-slate-50">Il Problema</a>
+      <a href="#metodologia" class="mobile-link block w-full text-left font-medium text-slate-600 py-2 border-b border-slate-50">Metodologia</a>
+      <a href="#programma" class="mobile-link block w-full text-left font-medium text-slate-600 py-2 border-b border-slate-50">Programma</a>
+      <a href="#prima-edizione" class="mobile-link block w-full text-left font-medium text-slate-600 py-2 border-b border-slate-50">Prima Edizione</a>
+      <a href="#sede" class="mobile-link block w-full text-left font-medium text-slate-600 py-2 border-b border-slate-50">Sede</a>
+      <a href="#docenti" class="mobile-link block w-full text-left font-medium text-slate-600 py-2 border-b border-slate-50">Docenti</a>
+      <a href="#iscrizione" class="mobile-link block w-full text-left font-bold text-emerald-700 py-2">Iscrizioni</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-white pt-24 pb-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-pattern"></div>
+
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-bold mb-4">
+        <i data-lucide="refresh-cw" class="w-4 h-4"></i> Seconda Edizione · Autunno 2026
+      </div>
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-100 text-red-600 text-sm font-bold mb-8 ml-0 sm:ml-2">
+        <i data-lucide="zap" class="w-4 h-4"></i> Hai studiato per anni, ma non ti senti pronto?
+      </div>
+      <h2 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-tight">
+        Dal Libro al <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">Paziente Reale</span>.
+      </h2>
+      <p class="text-xl md:text-2xl text-slate-600 mb-6 leading-relaxed max-w-3xl mx-auto font-medium">
+        Il primo percorso immersivo progettato da biologi nutrizionisti per biologi nutrizionisti, per trasformare la teoria in pratica concreta.
+      </p>
+      <p class="text-xl font-bold text-emerald-700 mb-4">
+        23–25 ottobre · 7 novembre · 14–15 novembre — Torino
+      </p>
+      <p class="text-lg text-slate-500 mb-10 italic">
+        "Se ascolto dimentico, se guardo capisco, se faccio imparo."
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#iscrizione" class="px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 hover:bg-emerald-700 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 text-lg">
+          Scopri il Percorso <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+      <p class="mt-6 text-sm font-semibold text-slate-500" data-eb-note>
+        Massimo 30 posti · <span class="text-emerald-700">Early Bird −10% fino all'1 settembre</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- PATROCINIO -->
+  <div class="bg-emerald-900 text-white py-6 shadow-inner">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
+      <div class="w-24 md:w-32 shrink-0">
+        <!-- ⚠️ Assicurati che questo file ESISTA davvero -->
+        <img
+          src="./assets/images/loghi/logo-ordine-biologi.png"
+          alt="Logo Ordine dei Biologi Piemonte Liguria Valle d'Aosta"
+          class="w-full h-auto object-contain bg-white p-2 rounded-lg shadow-lg"
+        />
+      </div>
+
+      <div>
+        <h3 class="text-sm md:text-xs text-emerald-300 font-bold uppercase tracking-widest mb-1 flex items-center justify-center md:justify-start gap-2">
+          <i data-lucide="award" class="w-4 h-4"></i> Iniziativa Riconosciuta Ufficialmente
+        </h3>
+        <p class="text-lg md:text-xl font-bold leading-tight">
+          Con il Patrocinio dell'Ordine dei Biologi<br class="hidden md:block" />
+          del Piemonte, della Liguria e della Valle d'Aosta
+        </p>
+        <p class="text-sm text-emerald-100 mt-2 font-semibold">Concesso alla prima edizione e rinnovato per la seconda.</p>
+        <p class="text-sm text-emerald-200 mt-1 opacity-80">Delibera n. 147/26 del 19.02.2026 · Delibera n. 236/26 del 25.06.2026</p>
+      </div>
+    </div>
+  </div>
+
+    <!-- IL PROBLEMA -->
+  <section id="progetto" class="py-24 px-4 max-w-5xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-16 items-center">
+      <div class="md:w-1/2">
+        <h3 class="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-3">Da dove nasce</h3>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Il salto nel vuoto tra università e professione.</h2>
+        <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+          "Come tutor di tirocinio, ho seguito da vicino decine di studenti in Scienze della Nutrizione. Ogni volta ho visto ripetersi lo stesso scenario:
+          <strong class="text-slate-800">solide basi teoriche, ma difficoltà nell'applicarle con sicurezza davanti a un paziente vero.</strong>"
+        </p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          Il primo colloquio, le misurazioni, l'interpretazione delle informazioni, la gestione di un paziente difficile:
+          <em>nulla di tutto questo si impara davvero solo sui libri</em>.
+        </p>
+        <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-xl">
+          <p class="text-emerald-900 font-medium">
+            "Senza un contesto protetto in cui esercitarsi, confrontarsi, sbagliare e ricevere feedback, il passaggio alla professione diventa un vero e proprio salto nel vuoto."<br /><br />
+            <span class="font-bold">— Dr. Gianluca Sozzi, Ideatore SPN</span>
+          </p>
+        </div>
+        <p class="text-lg text-slate-600 leading-relaxed mt-6">
+          Nella primavera 2026 SPN ha debuttato con la prima edizione. L'aula ha confermato l'intuizione:
+          <strong class="text-emerald-700">il metodo funziona, e la richiesta c'è.</strong> La seconda edizione riparte da lì.
+        </p>
+      </div>
+
+      <div class="md:w-1/2 grid grid-cols-1 gap-4 w-full">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+          <h4 class="text-2xl font-bold text-slate-900 mb-4">70% Pratica, 100% Crescita</h4>
+          <p class="text-slate-600 mb-6">Un allenamento intensivo alla realtà della professione. Si lavora su casi reali, si fanno role play, si applicano protocolli e si ragiona insieme.</p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-slate-700 font-medium"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500"></i> Simulazioni reali e casi a scatola chiusa</li>
+            <li class="flex items-center gap-3 text-slate-700 font-medium"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500"></i> Rotazione dei ruoli e lavoro a gruppi</li>
+            <li class="flex items-center gap-3 text-slate-700 font-medium"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500"></i> Feedback continui e personalizzati</li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-lg relative overflow-hidden mt-4">
+          <i data-lucide="quote" class="absolute -top-4 -right-4 w-32 h-32 text-slate-800 opacity-50"></i>
+          <div class="relative z-10">
+            <p class="text-slate-300 italic mb-6 text-lg leading-relaxed">
+              "Non si è limitato a dare delle semplici spiegazioni, ma mi ha aiutato ad imparare concretamente, ad acquisire sicurezza professionale, ma soprattutto mi ha dato degli strumenti pratici per poter crescere."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center">
+                <i data-lucide="user" class="w-6 h-6 text-emerald-400"></i>
+              </div>
+              <div>
+                <p class="font-bold text-white">Maria</p>
+                <p class="text-sm text-slate-400">Biologa Nutrizionista</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- METODOLOGIA -->
+  <section id="metodologia" class="bg-slate-50 py-24 px-4 border-y border-slate-200">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <h2 class="text-4xl font-bold mb-4 text-slate-900">Non solo impari: fai. <span class="text-emerald-600">Subito. Davvero.</span></h2>
+        <p class="text-slate-600 text-lg">Hai passato anni sui libri. Ora è il momento di metterti alla prova. Ogni modulo è progettato per farti agire, decidere, sbagliare e capire.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+          <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 border border-emerald-100">
+            <i data-lucide="activity" class="w-6 h-6 text-emerald-600"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 text-slate-900">70% Pratica</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">Niente maratone di slide: si lavora su casi a scatola chiusa, role play clinici, gruppi e rotazione dei ruoli. La teoria entra solo quando serve a decidere.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+          <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 border border-emerald-100">
+            <i data-lucide="brain" class="w-6 h-6 text-emerald-600"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 text-slate-900">Pensiero Critico</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">Approccio socratico: non ti diamo risposte preconfezionate, ti alleniamo a porre le domande giuste e a ragionare clinicamente.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+          <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 border border-emerald-100">
+            <i data-lucide="users" class="w-6 h-6 text-emerald-600"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 text-slate-900">Mentorship Reale</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">I docenti sono mentori che ti affiancano passo passo. Avrai feedback personalizzati per sviluppare competenze solide.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+          <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 border border-emerald-100">
+            <i data-lucide="target" class="w-6 h-6 text-emerald-600"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 text-slate-900">Mystery Case Method</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">Affronterai casi clinici con informazioni fornite in modo progressivo, per imparare a gestire l'incertezza diagnostica reale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMMA -->
+  <section id="programma" class="py-24 px-4 max-w-4xl mx-auto">
+    <div class="text-center mb-16">
+      <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">4 Moduli per diventare operativi</h3>
+      <p class="text-slate-600 text-lg">Un percorso strutturato per costruire competenze solide, dalla comunicazione al marketing etico.</p>
+    </div>
+
+    <div class="space-y-8">
+      <!-- Modulo 1: ISAK -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:border-emerald-200 transition-colors">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/3 shrink-0">
+            <div class="text-emerald-700 font-bold mb-2 uppercase text-xs tracking-wider bg-emerald-50 w-fit px-3 py-1 rounded-full border border-emerald-100">Modulo 1</div>
+            <h4 class="text-2xl font-bold text-slate-900 mb-3">Certificazione ISAK Livello 1</h4>
+            <div class="text-sm font-medium text-slate-500 flex items-center gap-2 mb-2"><i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i> 23-24-25 Ottobre 2026</div>
+            <div class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-emerald-600"></i> Dr. Andrea Fiantanese</div>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-slate-600 mb-5 leading-relaxed">Uno standard di eccellenza internazionale per la misurazione antropometrica. Attesta autorevolezza e precisione professionale, fondamentale per la personalizzazione dei piani su dati oggettivi.</p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700 font-medium">
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Marcatura punti di repere</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Piattaforma ISAK Metry</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Calcolo somatotipo e TEM</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Pratica supervisionata in aula</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modulo 2: Comunicazione -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:border-emerald-200 transition-colors">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/3 shrink-0">
+            <div class="text-emerald-700 font-bold mb-2 uppercase text-xs tracking-wider bg-emerald-50 w-fit px-3 py-1 rounded-full border border-emerald-100">Modulo 2</div>
+            <h4 class="text-2xl font-bold text-slate-900 mb-3">Comunicazione e Coaching</h4>
+            <div class="text-sm font-medium text-slate-500 flex items-center gap-2 mb-2"><i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i> 07 Novembre 2026</div>
+            <div class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-emerald-600"></i> Dr. Edoardo Bo</div>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-slate-600 mb-5 leading-relaxed">Fornisce le competenze essenziali per gestire la comunicazione professionale in ambito nutrizionale, focalizzandosi sulla relazione con il paziente e sulle strategie per facilitare un cambiamento comportamentale duraturo.</p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700 font-medium">
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Tecniche di ascolto attivo</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Gestione di pazienti difficili</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Simulazioni e Role play (DISC)</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Approccio Nutrizione + Coaching</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modulo 3: Cliniche (centrale) -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-emerald-600 border-y border-r border-slate-200">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/3 shrink-0">
+            <div class="text-emerald-700 font-bold mb-2 uppercase text-xs tracking-wider bg-emerald-50 w-fit px-3 py-1 rounded-full border border-emerald-100">Modulo 3 · Il Cuore del Percorso</div>
+            <h4 class="text-2xl font-bold text-slate-900 mb-3">Competenze Cliniche e Metodo</h4>
+            <div class="text-sm font-medium text-slate-500 flex items-center gap-2 mb-2"><i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i> 14-15 Novembre 2026</div>
+            <div class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-emerald-600"></i> Dr. Gianluca Sozzi</div>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-slate-600 mb-5 leading-relaxed">Il modulo intensivo per colmare il divario universitario. Formazione per professionisti autonomi capaci di applicare un ragionamento clinico evidence-based. Include i moduli "Approfondimenti su Richiesta".</p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700 font-medium">
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Anamnesi ed esami ematochimici</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Mystery Case e simulazioni</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Metodo socratico e incertezza</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Piani nutrizionali personalizzati</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modulo 4: Marketing (online) -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:border-emerald-200 transition-colors">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/3 shrink-0">
+            <div class="text-emerald-700 font-bold mb-2 uppercase text-xs tracking-wider bg-emerald-50 w-fit px-3 py-1 rounded-full border border-emerald-100">Modulo 4 · Online</div>
+            <h4 class="text-2xl font-bold text-slate-900 mb-3">Marketing Sanitario Etico</h4>
+            <div class="text-sm font-medium text-slate-500 flex items-center gap-2 mb-2"><i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i> Fruibile online dal momento dell'acquisto</div>
+            <div class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="user" class="w-4 h-4 text-emerald-600"></i> Dr.ssa Giulia Valle</div>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-slate-600 mb-5 leading-relaxed">Impara a comunicare in modo etico sui social. Niente logiche commerciali aggressive, ma l'uso dell'educazione per fidelizzare, attrarre i pazienti giusti e gestire la propria presenza digitale a norma di legge.</p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700 font-medium">
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Creazione Personal Brand solido</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Regole di pubblicità sanitaria</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Funnel di vendita organico</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i> Ottimizzazione profilo IG</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRIMA EDIZIONE -->
+  <section id="prima-edizione" class="bg-emerald-50/60 py-24 px-4 border-y border-emerald-100">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14 max-w-3xl mx-auto">
+        <h3 class="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-3">Riprova sul campo</h3>
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">La prima edizione, in breve.</h2>
+        <p class="text-slate-600 text-lg">SPN ha debuttato nella primavera 2026 al Centro TABOR di Torino. Tre weekend d'aula, un metodo messo alla prova sul campo.</p>
+      </div>
+
+      <!-- Foto: sostituire i placeholder con immagini reali in assets/images/prima-edizione/ -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+        <div class="aspect-[4/3] rounded-xl border-2 border-dashed border-emerald-300 bg-white flex items-center justify-center text-center text-xs text-emerald-700 p-3">[ FOTO: aula al lavoro ]</div>
+        <div class="aspect-[4/3] rounded-xl border-2 border-dashed border-emerald-300 bg-white flex items-center justify-center text-center text-xs text-emerald-700 p-3">[ FOTO: misurazioni antropometriche ]</div>
+        <div class="aspect-[4/3] rounded-xl border-2 border-dashed border-emerald-300 bg-white flex items-center justify-center text-center text-xs text-emerald-700 p-3">[ FOTO: role play / simulazioni ]</div>
+        <div class="aspect-[4/3] rounded-xl border-2 border-dashed border-emerald-300 bg-white flex items-center justify-center text-center text-xs text-emerald-700 p-3">[ FOTO: lavoro a gruppi ]</div>
+      </div>
+
+      <!-- Testimonianze: duplicare la card per ogni nuova testimonianza raccolta -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+          <i data-lucide="quote" class="w-8 h-8 text-emerald-300 mb-4"></i>
+          <p class="text-slate-600 italic mb-4 leading-relaxed">[ Testimonianza partecipante prima edizione — in arrivo ]</p>
+          <p class="font-bold text-slate-900">[ Nome ]</p>
+          <p class="text-sm text-slate-500">[ Qualifica ]</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+          <i data-lucide="quote" class="w-8 h-8 text-emerald-300 mb-4"></i>
+          <p class="text-slate-600 italic mb-4 leading-relaxed">[ Testimonianza partecipante prima edizione — in arrivo ]</p>
+          <p class="font-bold text-slate-900">[ Nome ]</p>
+          <p class="text-sm text-slate-500">[ Qualifica ]</p>
+        </div>
+      </div>
+
+      <div class="bg-emerald-700 text-white rounded-2xl p-8 max-w-3xl mx-auto text-center shadow-lg">
+        <p class="text-lg leading-relaxed">Il patrocinio dell'Ordine dei Biologi PLV, concesso alla prima edizione, <strong>è stato rinnovato per la seconda</strong>. Non è un bollino: è la valutazione di un ente pubblico sui contenuti e sui docenti, confermata dopo averlo visto all'opera.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SEDE -->
+  <section id="sede" class="bg-white py-24 px-4 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+        <i data-lucide="map-pin" class="w-10 h-10 text-emerald-600"></i>
+      </div>
+      <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">La Sede del Corso</h3>
+      <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Tutte le lezioni in presenza e le esercitazioni pratiche si terranno presso:
+      </p>
+
+      <div class="bg-slate-50 border border-slate-200 p-8 md:p-10 rounded-3xl shadow-sm inline-block w-full md:w-auto text-center">
+        <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Centro TABOR</h4>
+        <p class="text-slate-600 mb-8 text-lg">Via Chambery 93/115 int.D<br>10142, Torino (TO)</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Centro+TABOR+Via+Chambery+93+Torino" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-xl shadow-md hover:bg-blue-700 hover:-translate-y-1 transition-all w-full md:w-auto">
+          <i data-lucide="map" class="w-5 h-5"></i> Apri in Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCENTI -->
+  <section id="docenti" class="bg-emerald-900 text-white py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h3 class="text-3xl font-bold mb-4">I Tuoi Mentori</h3>
+        <p class="text-emerald-100 max-w-2xl mx-auto text-lg">
+          Professionisti esperti che non si limitano a insegnare, ma ti affiancano passo dopo passo nella pratica reale.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-emerald-800 p-8 rounded-2xl border border-emerald-700 text-center hover:bg-emerald-700 transition-colors">
+          <h4 class="font-bold text-xl mb-1">Dr. Gianluca Sozzi</h4>
+          <p class="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4">Ideatore e Docente Area Clinica</p>
+          <p class="text-sm text-emerald-100 leading-relaxed">
+            Biologo Nutrizionista clinico e sportivo. Ha seguito come tutor decine di studenti nei tirocini curricolari, guidandoli dal libro alla realtà del paziente.
+          </p>
+        </div>
+
+        <div class="bg-emerald-800 p-8 rounded-2xl border border-emerald-700 text-center hover:bg-emerald-700 transition-colors">
+          <h4 class="font-bold text-xl mb-1">Dr. Andrea Fiantanese</h4>
+          <p class="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4">Istruttore ISAK Livello 3</p>
+          <p class="text-sm text-emerald-100 leading-relaxed">
+            Esperto in Nutrizione Sportiva. Conduce la certificazione internazionale per l'applicazione dei metodi standardizzati di misurazione antropometrica.
+          </p>
+        </div>
+
+        <div class="bg-emerald-800 p-8 rounded-2xl border border-emerald-700 text-center hover:bg-emerald-700 transition-colors">
+          <h4 class="font-bold text-xl mb-1">Dr. Edoardo Bo</h4>
+          <p class="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4">Docente Comunicazione</p>
+          <p class="text-sm text-emerald-100 leading-relaxed">
+            Biologo Nutrizionista e Mental Coach. Insegna le tecniche di ascolto attivo e i modelli di cambiamento comportamentale per l'alleanza terapeutica.
+          </p>
+        </div>
+
+        <div class="bg-emerald-800 p-8 rounded-2xl border border-emerald-700 text-center hover:bg-emerald-700 transition-colors">
+          <h4 class="font-bold text-xl mb-1">Dr.ssa Giulia Valle</h4>
+          <p class="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4">Specialista Marketing Sanitario</p>
+          <p class="text-sm text-emerald-100 leading-relaxed">
+            Infermiera e Fondatrice di Doc Academy. Guida i professionisti sanitari nello sviluppo del personal branding in modo etico e deontologico.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- FORM NEWSLETTER -->
+  <div class="ml-embedded" data-form="A0EdRh"></div>
+  <!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '285314');
+</script>
+<!-- End MailerLite Universal -->
+  
+  <!-- CONFIGURATORE PERCORSO (ISCRIZIONI) -->
+  <section id="iscrizione" class="max-w-6xl mx-auto px-4 py-24">
+    <div class="text-center mb-16">
+      <h3 class="text-4xl font-extrabold text-slate-900 mb-4">Componi il tuo Percorso Formativo</h3>
+
+      <div class="max-w-3xl mx-auto bg-blue-50 border border-blue-200 rounded-2xl p-6 text-left shadow-sm mt-8">
+        <h4 class="font-bold text-blue-900 text-lg mb-3 flex items-center gap-2">
+          <i data-lucide="info" class="w-5 h-5"></i> Come funziona l'iscrizione?
+        </h4>
+        <p class="text-blue-800 text-sm leading-relaxed mb-3">
+          Il percorso è modulare: puoi decidere di acquistare un <strong>singolo modulo</strong>, <strong>più moduli</strong>, oppure il <strong>Percorso Completo</strong>.
+          Usa il simulatore qui sotto per vedere i costi. Il pagamento odierno rappresenta l'<strong>acconto</strong>.
+        </p>
+        <p class="text-blue-900 text-sm font-semibold" data-eb-note>
+          ⏳ <strong>Early Bird attivo fino all'1 settembre:</strong>
+          <span class="font-normal text-blue-800">−10% su tutto, sottratto interamente dall'acconto odierno.</span>
+        </p>
+        <p class="text-blue-900 text-sm font-semibold mt-2">
+          🎁 Sei iscritto all'Ordine dei Biologi (Piemonte, Liguria, Valle d'Aosta)?
+          <span class="font-normal text-blue-800">Hai diritto al 10% di sconto, sottratto interamente dall'acconto odierno. I due sconti non sono cumulabili: si applica un solo −10%.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-8 items-start">
+
+      <!-- Colonna sinistra -->
+      <div class="w-full lg:w-2/3 space-y-6">
+        <div class="bg-white p-1 rounded-xl flex bg-slate-100 border border-slate-200">
+          <button id="btn-tab-full" type="button" class="flex-1 py-3 font-bold rounded-lg bg-white shadow text-emerald-700 transition-all">
+            Percorso Completo
+          </button>
+          <button id="btn-tab-custom" type="button" class="flex-1 py-3 font-bold rounded-lg text-slate-500 hover:text-slate-700 transition-all">
+            Moduli Singoli
+          </button>
+        </div>
+
+        <div id="panel-full" class="bg-white border-2 border-emerald-500 rounded-2xl p-8 shadow-md transition-all cursor-pointer hover:bg-emerald-50/50">
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-full text-xs font-bold tracking-wide mb-3">
+                <i data-lucide="award" class="w-4 h-4 text-emerald-600"></i> CONSIGLIATO
+              </div>
+              <h4 class="text-3xl font-extrabold text-slate-900">Scuola Pratica di Nutrizione</h4>
+              <p class="text-slate-600 mt-2">Tutti i 4 moduli formativi.</p>
+            </div>
+            <div class="text-right shrink-0 ml-4">
+              <p class="text-2xl font-extrabold text-emerald-700" id="full-price-display">€1580</p>
+              <p class="text-xs text-slate-500 uppercase font-semibold" id="full-price-caption">Prezzo Totale</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700 font-medium bg-slate-50 p-4 rounded-xl border border-slate-100">
+            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i> Certificazione ISAK Livello 1</div>
+            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i> Comunicazione e Coaching</div>
+            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i> Competenze Cliniche</div>
+            <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i> Marketing Sanitario Etico</div>
+          </div>
+        </div>
+
+        <div id="panel-custom" class="hidden space-y-4 transition-all">
+          <div id="custom-modules-container" class="space-y-4"></div>
+        </div>
+      </div>
+
+      <!-- Colonna destra -->
+      <div class="w-full lg:w-1/3 bg-white border border-slate-200 rounded-2xl shadow-xl sticky top-28 overflow-hidden">
+        <div class="p-6 border-b border-slate-100">
+          <h4 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <i data-lucide="shopping-bag" class="w-5 h-5 text-emerald-600"></i> Riepilogo
+          </h4>
+
+          <div id="summary-items" class="space-y-3 mb-6 text-sm text-slate-700 border-b border-slate-100 pb-6 min-h-[60px]"></div>
+
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between items-center">
+              <span class="text-slate-600">Valore Totale</span>
+              <span class="font-bold text-slate-900 text-base" id="summary-total">€0</span>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-slate-100" data-eb-note>
+              <div class="bg-emerald-600 text-white rounded-lg p-3 flex items-start gap-2">
+                <i data-lucide="timer" class="w-5 h-5 shrink-0 mt-0.5"></i>
+                <p class="text-sm font-bold leading-snug">Early Bird attivo: −10% automatico fino all'1 settembre.<br>
+                <span class="font-normal text-emerald-50">Già applicato nel riepilogo qui sotto. Non cumulabile con lo sconto OdB PLV.</span></p>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-slate-100">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="odb-checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+                <span class="text-slate-700 text-sm group-hover:text-slate-900 transition-colors">
+                  <strong>Iscritto Ordine Biologi (Piemonte, Liguria, Valle d'Aosta)</strong>
+                </span>
+              </label>
+
+              <p class="mt-3 text-[11px] text-slate-600 leading-relaxed font-semibold">
+                La selezione dell’opzione Ordine dei Biologi Piemonte, Liguria e Valle d'Aosta costituisce autodichiarazione ai sensi degli artt. 46 e 76 D.P.R. 445/2000.
+                In caso di dichiarazione mendace, oltre alla decadenza dal beneficio economico, l’organizzazione potrà procedere
+                al recupero delle somme dovute e segnalare l’irregolarità alle autorità competenti.
+              </p>
+
+              <div id="odb-input-container" class="mt-3 hidden bg-emerald-50 p-3 rounded-lg border border-emerald-100">
+                <label class="block text-xs font-bold text-emerald-900 mb-1">Numero Iscrizione Ordine</label>
+                <input type="text" id="odb-number" placeholder="Es. PLV_A1234"
+                       class="w-full text-sm p-2.5 border border-emerald-200 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+              </div>
+            </div>
+
+            <div id="summary-discount-row" class="flex justify-between text-emerald-600 font-bold hidden items-center bg-emerald-50 p-2 rounded-lg mt-2">
+              <span id="summary-discount-label">Sconto (-10%)</span>
+              <span id="summary-discount">-€0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 p-6">
+          <div class="flex justify-between items-end mb-1">
+            <span class="font-bold text-slate-900 text-sm">Acconto oggi</span>
+            <span class="text-4xl font-extrabold text-emerald-700" id="summary-deposit">€0</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-6 text-right font-medium" id="summary-balance-text">Saldo di €0 all'avvio</p>
+
+          <div class="bg-white border border-slate-200 rounded-xl p-4 mb-6 shadow-sm">
+            <h5 class="text-xs font-bold text-slate-900 mb-2 uppercase tracking-wider">Condizioni di Acquisto</h5>
+
+            <div>
+              <img
+          src="./assets/images/termini-generali-di-vendita.png"
+          alt="Infografica termini generali"
+          class="w-full h-auto object-contain bg-white p-2 rounded-lg shadow-lg"
+        />
+      </div>
+              <p class="mb-2">Prima di procedere, leggi i nostri Termini e le Condizioni.</p>
+              <a href="./termini.html" target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 font-bold text-emerald-700 hover:text-emerald-900 underline">
+                Apri Termini e Condizioni
+              </a>
+            </div>
+
+            <label class="flex items-start gap-2 cursor-pointer group">
+              <input type="checkbox" id="tc-checkbox" class="mt-0.5 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+              <span class="text-[11px] text-slate-700 font-medium leading-tight">
+                Dichiaro di aver letto e accettato integralmente le Condizioni di Acquisto.
+              </span>
+            </label>
+
+            <label class="flex items-start gap-2 cursor-pointer group mt-4">
+              <input type="checkbox" id="privacy-checkbox" class="mt-0.5 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+              <span class="text-[11px] text-slate-700 font-medium leading-tight">
+                Dichiaro di aver letto l’
+                <a href="./privacy.html" target="_blank" class="text-emerald-700 underline font-bold">Informativa Privacy</a>
+                e acconsento al trattamento dei miei dati personali.
+              </span>
+            </label>
+          </div>
+
+          <button id="btn-checkout"
+                  class="w-full py-4 bg-slate-200 text-slate-400 font-bold text-lg rounded-xl cursor-not-allowed flex justify-center items-center gap-2 transition-all"
+                  disabled>
+            <i data-lucide="credit-card" class="w-5 h-5"></i> Procedi al Pagamento
+          </button>
+
+          <div class="mt-4 text-[10px] text-slate-400 text-center leading-tight">
+            <p class="mb-1"><i data-lucide="lock" class="w-3 h-3 inline"></i> Checkout Stripe.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner"
+       class="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-2xl p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 z-50 hidden">
+    <div class="text-sm text-slate-700 max-w-2xl">
+      Utilizziamo cookie tecnici e, previo consenso, cookie statistici.
+      Leggi la nostra <a href="./cookie.html" class="text-emerald-700 font-bold underline">Cookie Policy</a>.
+    </div>
+    <div class="flex gap-3">
+      <button id="cookie-reject"
+              class="px-4 py-2 text-sm font-semibold text-slate-600 border border-slate-300 rounded-lg hover:bg-slate-100 transition">
+        Rifiuta
+      </button>
+      <button id="cookie-accept"
+              class="px-4 py-2 text-sm font-bold text-white bg-emerald-600 rounded-lg hover:bg-emerald-700 transition">
+        Accetta
+      </button>
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div id="video-modal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm" data-video-close></div>
+
+    <div class="relative z-[61] max-w-3xl mx-auto mt-10 md:mt-16 px-4">
+      <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+        <div class="p-5 md:p-6 border-b border-slate-100 flex items-start justify-between gap-4">
+          <div>
+            <h4 class="text-lg md:text-xl font-extrabold text-slate-900">Come funziona il carrello</h4>
+            <p class="text-sm text-slate-600 mt-1">Guarda questo video prima di andare al pagamento su Stripe.</p>
+          </div>
+
+          <button type="button" class="p-2 text-slate-500 hover:text-slate-900" aria-label="Chiudi" data-video-close>
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="p-5 md:p-6 bg-slate-50">
+          <div class="rounded-xl overflow-hidden border border-slate-200 bg-black">
+            <div class="relative w-full" style="padding-top: 56.25%;">
+              <iframe
+                id="yt-iframe"
+                class="absolute inset-0 w-full h-full"
+                src="https://www.youtube-nocookie.com/embed/l-Sph0nKnLQ?rel=0&modestbranding=1"
+                title="Come funziona il carrello"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="mt-5 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-end">
+            <button type="button" class="px-5 py-3 rounded-xl border border-slate-300 text-slate-700 font-bold hover:bg-white transition" data-video-close>
+              Chiudi
+            </button>
+
+            <button type="button" id="video-continue"
+                    class="px-5 py-3 rounded-xl bg-emerald-600 text-white font-extrabold hover:bg-emerald-700 transition flex items-center justify-center gap-2">
+              Continua su Stripe <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <label class="mt-4 flex items-start gap-2 text-xs text-slate-600">
+            <input type="checkbox" id="dont-show-video" class="mt-0.5 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+            <span>Non mostrare più questo video (su questo dispositivo)</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: usa DEFER così parte dopo il DOM, senza casini -->
+  <script defer src="./js/config.js"></script>
+  <script defer src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuto a Bordo - Scuola Pratica di Nutrizione</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 selection:bg-emerald-200 selection:text-emerald-900 min-h-screen flex flex-col">
+
+    <!-- HEADER MINIMALE -->
+    <header class="bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm py-4">
+        <div class="max-w-4xl mx-auto px-4 flex justify-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-emerald-700 text-white p-2 rounded-lg">
+                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl leading-none text-emerald-900 tracking-tight">SPN</h1>
+                    <p class="text-[10px] uppercase font-bold text-emerald-600 tracking-wider">Scuola Pratica Nutrizione</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow flex items-center justify-center p-4 py-12">
+        <div class="max-w-3xl w-full bg-white rounded-3xl shadow-xl border-t-8 border-emerald-600 overflow-hidden">
+            
+            <!-- Hero / Success Section -->
+            <div class="p-8 md:p-12 text-center border-b border-slate-100 bg-emerald-50/30">
+                <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                    <i data-lucide="party-popper" class="w-10 h-10"></i>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Congratulazioni e Benvenuto a Bordo!</h1>
+                <p class="text-xl font-bold text-emerald-700 mb-4">Il tuo posto alla Scuola Pratica di Nutrizione è ufficialmente riservato.</p>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                    Abbiamo ricevuto il tuo acconto con successo. Hai fatto il primo passo per trasformare la teoria in una solida pratica clinica, e non vediamo l'ora di iniziare a lavorare insieme.
+                </p>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="p-8 md:p-12">
+                <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+                    <i data-lucide="list-checks" class="w-6 h-6 text-emerald-600"></i> Cosa succede adesso?
+                </h3>
+                
+                <div class="space-y-6">
+                    <!-- Step 1 -->
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-emerald-100 text-emerald-700 font-bold rounded-full flex items-center justify-center border border-emerald-200">1</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+                                <i data-lucide="mail" class="w-5 h-5 text-slate-400"></i> Controlla la tua email
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                A breve riceverai la ricevuta ufficiale del pagamento da parte di Stripe. <br>
+                                <span class="text-sm italic text-slate-500">(Se non la trovi, dai un'occhiata alla cartella Spam o Promozioni).</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-emerald-100 text-emerald-700 font-bold rounded-full flex items-center justify-center border border-emerald-200">2</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+                                <i data-lucide="scale" class="w-5 h-5 text-slate-400"></i> Saldo della quota
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                Come indicato nelle condizioni di acquisto, il pagamento odierno rappresenta l'acconto. Ti ricontatteremo via email non appena avremo raggiunto il numero minimo di iscritti per confermare la partenza ufficiale del corso e fornirti le istruzioni per il saldo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-emerald-100 text-emerald-700 font-bold rounded-full flex items-center justify-center border border-emerald-200">3</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-slate-400"></i> Segnati la Sede (per i moduli in presenza)
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                Le lezioni frontali e le esercitazioni si terranno a <strong>Torino</strong>, presso il <strong>Centro TABOR</strong> (Via Chambery 93/115 int.D, 10142). Inizia a organizzare il tuo viaggio!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contatti Box -->
+                <div class="mt-12 bg-slate-50 border border-slate-200 p-6 md:p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="phone-call" class="w-5 h-5 text-emerald-600"></i> Hai dubbi o domande?
+                    </h3>
+                    <p class="text-slate-600 mb-6">
+                        Siamo a tua completa disposizione. Se hai bisogno di assistenza o vuoi comunicarci qualcosa di importante prima dell'inizio, non esitare a contattarci:
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 text-slate-700 font-medium">
+                        <a href="mailto:info@scuolapraticanutrizione.it" class="flex items-center gap-2 hover:text-emerald-700 transition-colors">
+                            <div class="p-2 bg-white rounded-lg shadow-sm border border-slate-100"><i data-lucide="mail" class="w-5 h-5 text-emerald-600"></i></div>
+                            info@scuolapraticanutrizione.it
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Saluti e Bottoni -->
+                <div class="mt-10 text-center">
+                    <p class="text-slate-800 text-lg mb-8 italic">
+                        "A presto, e preparati a metterti in gioco!"<br>
+                        <span class="font-bold not-italic text-slate-900 block mt-2">Il Team della Scuola Pratica di Nutrizione</span>
+                        <span class="text-sm text-slate-500 not-italic">(Dr. Gianluca Sozzi e Docenti)</span>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="index.html" class="px-6 py-3 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
+                            <i data-lucide="arrow-left" class="w-5 h-5"></i> Torna alla Home
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER MINIMALE -->
+    <footer class="text-center py-6 text-slate-400 text-sm">
+        <p>&copy; 2026 Scuola Pratica di Nutrizione. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        // Inizializza le icone Lucide
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
